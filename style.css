@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #e8eef5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.menu-section {
+  background: #0d0d0d;
+  border-radius: 28px;
+  padding: 50px 40px 60px;
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+  /* Uncomment the line below and put your background image path */
+  /* background: url('your-background.jpg') center/cover no-repeat; */
+}
+
+
+.logo {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 28px;
+  background: linear-gradient(135deg, #ff9f1c, #ff6b6b, #a855f7, #22d3ee);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 0 6px #0d0d0d, 0 0 0 10px #ff9f1c;
+}
+
+.logo::before {
+  content: "🤟";
+  font-size: 38px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.logo-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+
+h1 {
+  color: #ffffff;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #a1a1aa;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 48px;
+}
+
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: #1a1a1a;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cart-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cart-icon:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+
+.card-content {
+  padding: 22px 20px 24px;
+  text-align: left;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card-price {
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.card-desc {
+  color: #a1a1aa;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-bottom: 22px;
+  flex: 1;
+}
+
+
+.order-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.order-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.order-btn:active {
+  transform: scale(0.98);
+}
+
+
+.card:nth-child(1) .card-content {
+  background: linear-gradient(to bottom, #2a1f14, #1f1810);
+}
+.card:nth-child(1) .order-btn {
+  background: linear-gradient(90deg, #f97316, #ea580c);
+}
+
+.card:nth-child(2) .card-content {
+  background: linear-gradient(to bottom, #2e1a4a, #1f1235);
+}
+.card:nth-child(2) .order-btn {
+  background: linear-gradient(90deg, #a855f7, #9333ea);
+}
+
+.card:nth-child(3) .card-content {
+  background: linear-gradient(to bottom, #0f2e2a, #0a1f1c);
+}
+.card:nth-child(3) .order-btn {
+  background: linear-gradient(90deg, #14b8a6, #0d9488);
+}
+
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .menu-section {
+    padding: 40px 24px 50px;
+  }
+}
